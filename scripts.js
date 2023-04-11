@@ -12,6 +12,10 @@ const getRepos = (username) => {
         repo.topics.includes("sketches")
       );
       console.log(sketchRepos);
+      sketchRepos.forEach((repo) => {
+        const { name, description, html_url, homepage } = repo;
+        console.log({name, description, html_url, homepage});
+      });
     });
 };
 getRepos("klalicki");

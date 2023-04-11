@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+.sketch-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.sketch-list article {
+  border: 2px solid black;
+  border-radius: 5px;
+  flex-basis: 300px;
+  padding: 10px;
+}
+.sketch-list a {
+  padding: 5px;
+  border: 1px solid blue;
+}

@@ -19,11 +19,16 @@ const getRepos = (username, topicFilter) => {
       });
       console.log(targetRepos);
       const cleanedTargetRepos = [];
+
+      // get rid of properties we don't need
       targetRepos.forEach((repo) => {
         const { name, description, html_url, homepage } = repo;
         cleanedTargetRepos.push({ name, description, html_url, homepage });
       });
       const sketchListElem = document.querySelector(".sketch-list");
+      //clear the sketch list
+      sketchListElem.innerHTML = "";
+      // generate a DOM element for each repo
       cleanedTargetRepos.forEach((repo) => {
         const newElem = document.createElement("article");
         const header = document.createElement("h3");
@@ -39,9 +44,19 @@ const getRepos = (username, topicFilter) => {
         newElem.appendChild(header);
         newElem.appendChild(description);
         newElem.appendChild(repoLink);
-        newElem.appendChild(sketchLink);
+        if (repo.homepage) {
+          newElem.appendChild(sketchLink);
+        }
         sketchListElem.appendChild(newElem);
       });
     });
 };
-getRepos("klalicki");
+// getRepos("klalicki");
+
+const handleFormSubmit = () => {
+  const username = document.querySelector("#username").value;
+  const topicFilter = document.querySelector("#topics").value;
+  console.log(username, topicFilter);
+  getRepos(username, topicFilter);
+};
+document.querySelector("#submit").addEventListener("click", handleFormSubmit);

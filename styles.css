@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+:root {
+  font-size: 150%;
+}
 .sketch-list {
   display: flex;
   flex-direction: row;

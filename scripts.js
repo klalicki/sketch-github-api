@@ -8,8 +8,7 @@ const getRepos = (username, topicFilter) => {
   const repoList = octokit
     .request(`GET /users/${username}/repos`)
     .then((response) => {
-      console.log(response.data);
-      // filter by repos that include topic 'sketches'
+      // filter by repos that include the topic that was passed in as a parameter
       const targetRepos = response.data.filter((repo) => {
         if (!topicFilter) {
           return true;
@@ -36,24 +35,29 @@ const getRepos = (username, topicFilter) => {
         const description = document.createElement("p");
         description.innerText = repo.description;
         const repoLink = document.createElement("a");
+        const linkContainer = document.createElement("div");
         repoLink.innerText = "View Repo";
         repoLink.href = repo.html_url;
-        const sketchLink = document.createElement("a");
-        sketchLink.innerText = "View Sketch";
-        sketchLink.href = repo.homepage;
+        linkContainer.appendChild(repoLink);
+        if (repo.homepage) {
+          const sketchLink = document.createElement("a");
+          sketchLink.innerText = "View Sketch";
+          sketchLink.href = repo.homepage;
+          linkContainer.appendChild(sketchLink);
+        }
+
         newElem.appendChild(header);
         newElem.appendChild(description);
-        newElem.appendChild(repoLink);
-        if (repo.homepage) {
-          newElem.appendChild(sketchLink);
-        }
+        newElem.appendChild(linkContainer);
+
         sketchListElem.appendChild(newElem);
       });
     });
 };
 // getRepos("klalicki");
 
-const handleFormSubmit = () => {
+const handleFormSubmit = (e) => {
+  e.preventDefault();
   const username = document.querySelector("#username").value;
   const topicFilter = document.querySelector("#topics").value;
   console.log(username, topicFilter);

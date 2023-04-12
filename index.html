@@ -1,23 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GitHub API test</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <h1>testing the GitHub API</h1>
-    <section class="inputs">
-      <input type="text" id="username" placeholder="username" />
-      <input type="text" id="topics" placeholder="topics" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub API test</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main>
+    <section class="first-section">
+ <h1>luv api</h1>
+ <p>Enter a GitHub username to see a list of all their public repositories.</p>
+    <form onsubmit="" class="inputs">
+      <div>
+        <label for="username">GitHub username:</label>
+        <input type="text" id="username" placeholder="username" />
+      </div>
+      <div>
+        <label for="topics">Topics to filter by (or leave blank)</label>
+        <input type="text" id="topics" placeholder="topics" />
+      </div>
+
+
       <button id="submit">Submit</button>
+    </form>
     </section>
+   
     <section class="sketch-list"></section>
-  </body>
- 
-    </scripts>
-      <script type="module" src="scripts.js">
-  </script>
+</body>
+
+</scripts>
+<script type="module" src="scripts.js">
+</script>
+</main>
+
 </html>

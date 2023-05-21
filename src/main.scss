@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  padding: 0.5rem;
+  width: 100vw;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+}
+main {
+  max-width: 900px;
+}
+.first-section {
+  padding: 0.5rem;
+  border: 2px solid black;
+  border-radius: 0.25rem;
+}
+:root {
+  font-size: 150%;
+}
+.sketch-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  gap: 10px;
+}
+.sketch-list article {
+  border: 2px solid black;
+  border-radius: 0.25rem;
+  flex-basis: 300px;
+  flex-grow: 1;
+  padding: 0.5rem;
+}
+.sketch-list a {
+  padding: 5px;
+  border: 1px solid blue;
+}
+input {
+  font-size: 1rem;
+}
+button {
+  font-size: 1rem;
+}
+.inputs {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+h3 {
+  margin-top: 0;
+}

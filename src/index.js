@@ -36,7 +36,9 @@ const getRepos = (username, topicFilter) => {
         const description = document.createElement("p");
         description.innerText = repo.description;
         const repoLink = document.createElement("a");
+        repoLink.classList.add("btn");
         const linkContainer = document.createElement("div");
+        linkContainer.classList.add("link-container");
         repoLink.innerText = "View Repo";
         repoLink.href = repo.html_url;
         linkContainer.appendChild(repoLink);
@@ -44,6 +46,7 @@ const getRepos = (username, topicFilter) => {
           const sketchLink = document.createElement("a");
           sketchLink.innerText = "View Sketch";
           sketchLink.href = repo.homepage;
+          sketchLink.classList.add("btn");
           linkContainer.appendChild(sketchLink);
         }
 

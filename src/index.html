@@ -12,7 +12,7 @@
 <body>
   <main>
     <section class="first-section">
- <h1>GitHub API demo</h1>
+ <h1>GitHub API test</h1>
  <p>Enter a GitHub username to see a list of all their public repositories.</p>
     <form onsubmit="" class="inputs">
       <div>
@@ -25,11 +25,16 @@
       </div>
 
 
-      <button id="submit">Submit</button>
+      <button id="submit" class="btn">Submit</button>
     </form>
     </section>
    
     <section class="sketch-list"></section>
+    <section class="footer">
+        <p>
+                This sketch uses the <a href="https://github.com/octokit/octokit.js">Octokit</a> library from GitHub to access the GitHub API. Scripts and SASS built & bundled in the build process with Webpack. 
+        </p>
+    </section>
 </body>
 
 </scripts>

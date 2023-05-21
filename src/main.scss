@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital@0;1&family=DM+Serif+Display&display=swap");
+
 * {
   box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
 }
 body {
   display: flex;
-  padding: 0.5rem;
+  // padding: 0.5rem;
   width: 100vw;
   min-height: 100vh;
   flex-direction: column;
@@ -12,10 +15,13 @@ body {
 main {
   max-width: 900px;
 }
-.first-section {
+.first-section,
+.footer {
   padding: 0.5rem;
   border: 2px solid black;
   border-radius: 0.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 :root {
   font-size: 150%;
@@ -24,7 +30,7 @@ main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: 10px;
+  // margin-top: 10px;
   gap: 10px;
 }
 .sketch-list article {
@@ -35,8 +41,13 @@ main {
   padding: 0.5rem;
 }
 .sketch-list a {
-  padding: 5px;
-  border: 1px solid blue;
+  // border: 1px solid blue;
+}
+.link-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 input {
   font-size: 1rem;
@@ -53,4 +64,18 @@ button {
 
 h3 {
   margin-top: 0;
+}
+
+.btn {
+  background-color: gray;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+  border: none;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    background-color: black;
+  }
 }
